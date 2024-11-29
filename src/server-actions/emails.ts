@@ -1,7 +1,7 @@
 'use server'
 
 import { EEmailStatus, TEmail } from '@/types'
-import { notFound, redirect } from 'next/navigation'
+import { notFound } from 'next/navigation'
 
 const BASE_URL = process.env.API_URL
 
@@ -35,6 +35,4 @@ export const deleteEmail = async (id: number): Promise<void> => {
   if(!response.ok) {
     notFound()
   }
-
-  return redirect('/')
 }
